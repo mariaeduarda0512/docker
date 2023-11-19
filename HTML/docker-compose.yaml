@@ -1,0 +1,24 @@
+version: '4.'
+
+services:
+myapp:
+ build: .
+ container_name: myapp
+ restart: always
+ ports: 
+  -8080:80
+ volumes:
+  -./html:/usr/share/ngingx/html
+
+image:mongodb: 8
+container_name: teste
+restart: always
+environment: 
+  MYSQL_ROOT_PASSWORD: teste
+  MYSQL_DATABASE: localhost
+ports:
+  -27017:27017
+volumes:
+ - ./mongodb:/var/lib/mongodb
+
+
